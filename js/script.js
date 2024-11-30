@@ -1,7 +1,20 @@
-const counterDisplay = document.getElementsByClassName("counter")[0];
-counterDisplay.textContent = '0'; 
-const incrementButton = document.getElementById('increment'); 
-const decrementButton = document.getElementById('decrement');
+document.addEventListener("DOMContentLoaded", () => {
+    const counterDisplay = document.createElement("div");
+    counterDisplay.className = "counter";
+    counterDisplay.textContent = '0';
+
+    const incrementButton = document.createElement("button");
+    incrementButton.id = "increment";
+    incrementButton.textContent = "+";
+
+    const decrementButton = document.createElement("button");
+    decrementButton.id = "decrement";
+    decrementButton.textContent = "-";
+
+    document.body.appendChild(counterDisplay);
+    document.body.appendChild(incrementButton);
+    document.body.appendChild(decrementButton);
+
 
 let counterValue = 0;
 
@@ -18,3 +31,4 @@ decrementButton.addEventListener('click', () => {
 function updateCounterDisplay() {
     counterDisplay.textContent = counterValue;
 }
+});
